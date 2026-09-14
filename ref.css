@@ -1,0 +1,322 @@
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   BODY
+================================ */
+
+body {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #ffffff;
+
+    color: #192338;
+}
+
+
+/* ================================
+   TRANG REF
+================================ */
+
+.ref-page {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding:
+        70px
+        7vw
+        70px;
+}
+
+
+/* ================================
+   GRID ẢNH
+================================ */
+
+.photo-grid {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 32px;
+}
+
+
+/* ================================
+   Ô ẢNH
+================================ */
+
+.photo-box {
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    border-radius: 15px;
+
+    background: #D9E1F1;
+
+    box-shadow:
+        0 15px 35px
+        rgba(25, 35, 56, 0.13);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* ================================
+   HOVER
+================================ */
+
+.photo-box:hover {
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        0 25px 45px
+        rgba(25, 35, 56, 0.22);
+}
+
+
+/* ================================
+   ẢNH
+================================ */
+
+.photo-box img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.photo-box:hover img {
+
+    transform:
+        scale(1.03);
+}
+
+
+/* ================================
+   NÚT QUAY LẠI
+================================ */
+
+.back-button {
+
+    position: fixed;
+
+    top: 25px;
+
+    left: 30px;
+
+    z-index: 100;
+
+    width: 46px;
+
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    border:
+        1px solid #D9E1F1;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    color: #192338;
+
+    font-size: 22px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(25, 35, 56, 0.08);
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.back-button:hover {
+
+    background: #192338;
+
+    color: #ffffff;
+
+    transform:
+        translateX(-4px);
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 800px) {
+
+    .ref-page {
+
+        padding:
+            70px
+            5vw
+            50px;
+    }
+
+
+    .photo-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 20px;
+    }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 500px) {
+
+    .ref-page {
+
+        padding:
+            85px
+            20px
+            40px;
+    }
+
+
+    .photo-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .back-button {
+
+        top: 20px;
+
+        left: 20px;
+
+    }
+
+}
+/* ================================
+   XEM ẢNH LỚN
+================================ */
+
+.image-viewer {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px;
+
+    background:
+        rgba(25, 35, 56, 0.92);
+
+    cursor: pointer;
+}
+
+
+.image-viewer img {
+
+    max-width: 90vw;
+
+    max-height: 90vh;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    cursor: default;
+}
+
+
+.viewer-close {
+
+    position: fixed;
+
+    top: 20px;
+
+    right: 25px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.15);
+
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}

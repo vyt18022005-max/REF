@@ -1,0 +1,1313 @@
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   COLOR PALETTE
+================================ */
+
+/*
+    #192338  = Oxford Blue
+    #1E2E4F  = Space Cadet
+    #31487A  = YInMn Blue
+    #8FB3E2  = Jordy Blue
+    #D9E1F1  = Lavender
+*/
+
+
+/* ================================
+   BODY
+================================ */
+
+body {
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #192338;
+
+    background: #192338;
+}
+
+
+/* ================================
+   BACKGROUND
+================================ */
+
+.background {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            #31487A 0%,
+            transparent 40%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            #8FB3E2 0%,
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 80% 90%,
+            #31487A 0%,
+            transparent 40%
+        ),
+
+        linear-gradient(
+            135deg,
+            #192338 0%,
+            #1E2E4F 45%,
+            #31487A 100%
+        );
+}
+
+
+/* ================================
+   MAIN WINDOW
+================================ */
+
+.window {
+    width: 84vw;
+
+    max-width: 1180px;
+
+    height: 78vh;
+
+    min-height: 580px;
+
+   background: #ffffff;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 30px 80px rgba(15, 25, 45, 0.45);
+
+    backdrop-filter: blur(20px);
+}
+
+
+/* ================================
+   TOP BAR
+================================ */
+
+.top-bar {
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 0 18px;
+
+    position: relative;
+
+    border-bottom:
+        1px solid rgba(25, 35, 56, 0.08);
+}
+
+
+/* ================================
+   WINDOW BUTTONS
+================================ */
+
+.window-buttons {
+    display: flex;
+
+    gap: 6px;
+}
+
+
+.window-buttons span {
+    width: 8px;
+
+    height: 8px;
+
+    border-radius: 50%;
+}
+
+
+/* Đỏ */
+
+.window-buttons span:nth-child(1) {
+    background: #8FB3E2;
+}
+
+
+/* Xanh */
+
+.window-buttons span:nth-child(2) {
+    background: #31487A;
+}
+
+
+/* Xanh đậm */
+
+.window-buttons span:nth-child(3) {
+    background: #1E2E4F;
+}
+
+
+/* ================================
+   WINDOW TITLE
+================================ */
+
+.window-title {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #31487A;
+}
+
+
+/* ================================
+   DATE
+================================ */
+
+.date {
+    margin-left: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #31487A;
+}
+
+
+.date-number {
+    font-size: 28px;
+
+    font-weight: 300;
+
+    line-height: 1;
+}
+
+
+.date-text {
+    font-size: 8px;
+
+    line-height: 1.2;
+}
+
+
+/* ================================
+   MAIN CONTENT
+================================ */
+
+.content {
+    height: calc(100% - 48px);
+
+    padding:
+        40px
+        38px
+        25px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* ================================
+   HEADING
+================================ */
+
+.heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-bottom: 28px;
+}
+
+
+/* ================================
+   SMALL LABEL
+================================ */
+
+.label {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+
+    color: #31487A;
+
+    margin-bottom: 9px;
+}
+
+
+/* ================================
+   MAIN TITLE
+================================ */
+
+h1 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(42px, 4.5vw, 62px);
+
+    font-weight: 500;
+
+    line-height: 0.88;
+
+    letter-spacing: -3px;
+
+    color: #192338;
+}
+
+
+/* ================================
+   SCROLL GUIDE
+================================ */
+
+.scroll-text {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding-bottom: 8px;
+
+    color: #31487A;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+}
+
+
+.scroll-text span {
+    font-size: 22px;
+
+    color: #1E2E4F;
+
+    animation:
+        moveArrow 1.5s infinite;
+}
+
+
+/* ================================
+   ARROW ANIMATION
+================================ */
+
+@keyframes moveArrow {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(7px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+
+/* ================================
+   REF CONTAINER
+================================ */
+
+.ref-container {
+    flex: 1;
+
+    overflow: hidden;
+}
+
+
+/* ================================
+   REF LIST
+================================ */
+
+.ref-list {
+    height: 100%;
+
+    display: flex;
+
+    gap: 16px;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    padding:
+        5px
+        3px
+        15px;
+
+    scrollbar-width: none;
+
+    scroll-behavior: smooth;
+
+    cursor: grab;
+}
+
+
+/* Chrome / Edge / Safari */
+
+.ref-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Khi đang kéo */
+
+.ref-list.dragging {
+    cursor: grabbing;
+
+    scroll-behavior: auto;
+}
+
+
+/* ================================
+   REF CARD
+================================ */
+
+.ref-card {
+    flex: 0 0 178px;
+
+    height: 276px;
+
+    position: relative;
+
+    padding:
+        15px
+        14px
+        12px;
+
+    background: #D9E1F1;
+
+    border-radius: 5px;
+
+    color: #192338;
+
+    box-shadow:
+        0 10px 25px rgba(25, 35, 56, 0.16);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* ================================
+   CARD HOVER
+================================ */
+
+.ref-card:hover {
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 20px 40px rgba(25, 35, 56, 0.28);
+}
+
+
+/* ================================
+   REF NUMBER
+================================ */
+
+.number {
+    font-size: 32px;
+
+    font-weight: 600;
+
+    color: #31487A;
+
+    letter-spacing: -2px;
+}
+
+
+/* ================================
+   PINK LINE → BLUE LINE
+================================ */
+
+.line {
+    width: 14px;
+
+    height: 2px;
+
+    background: #31487A;
+
+    margin-top: 5px;
+
+    margin-bottom: 23px;
+}
+
+
+/* ================================
+   REF NAME
+================================ */
+
+.ref-name {
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: #192338;
+
+    margin-bottom: 3px;
+}
+
+
+/* ================================
+   REF TYPE
+================================ */
+
+.ref-type {
+    font-size: 8px;
+
+    color: #31487A;
+
+    margin-bottom: 9px;
+}
+
+
+/* ================================
+   IMAGE BOX
+================================ */
+
+.image-box {
+    width: 100%;
+
+    height: 132px;
+
+    border-radius: 4px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #D9E1F1;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    background: #31487A;
+
+    overflow: hidden;
+}
+
+
+/* ================================
+   IMAGE COLORS
+================================ */
+
+/* REF 01 */
+
+.ref-card:nth-child(1)
+.image-box {
+    background: #192338;
+}
+
+
+/* REF 02 */
+
+.ref-card:nth-child(2)
+.image-box {
+    background: #1E2E4F;
+}
+
+
+/* REF 03 */
+
+.ref-card:nth-child(3)
+.image-box {
+    background: #31487A;
+}
+
+
+/* REF 04 */
+
+.ref-card:nth-child(4)
+.image-box {
+    background: #8FB3E2;
+}
+
+
+/* REF 05 */
+
+.ref-card:nth-child(5)
+.image-box {
+    background: #192338;
+}
+
+
+/* REF 06 */
+
+.ref-card:nth-child(6)
+.image-box {
+    background: #31487A;
+}
+
+
+/* REF 07 */
+
+.ref-card:nth-child(7)
+.image-box {
+    background: #1E2E4F;
+}
+
+
+/* REF 08 */
+
+.ref-card:nth-child(8)
+.image-box {
+    background: #8FB3E2;
+}
+
+
+/* ================================
+   CARD ICONS
+================================ */
+
+.icons {
+    position: absolute;
+
+    left: 14px;
+
+    right: 14px;
+
+    bottom: 10px;
+
+    display: flex;
+
+    gap: 13px;
+
+    color: #31487A;
+
+    font-size: 9px;
+}
+
+
+/* ================================
+   BOTTOM BAR
+================================ */
+
+.bottom {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding-top: 8px;
+}
+
+
+/* ================================
+   PROGRESS LINE
+================================ */
+
+.progress {
+    flex: 1;
+
+    height: 1px;
+
+    background:
+        rgba(25, 35, 56, 0.18);
+}
+
+
+/* ================================
+   PROGRESS
+================================ */
+
+#progressBar {
+    width: 15%;
+
+    height: 2px;
+
+    background: #31487A;
+
+    transition:
+        width 0.2s ease;
+}
+
+
+/* ================================
+   NEXT BUTTON
+================================ */
+
+#nextButton {
+    border: none;
+
+    background: none;
+
+    color: #1E2E4F;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+/* ================================
+   NEXT BUTTON HOVER
+================================ */
+
+#nextButton:hover {
+    transform:
+        translateX(5px);
+
+    color: #8FB3E2;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 700px) {
+
+    .window {
+        width: 94vw;
+
+        height: 90vh;
+
+        min-height: 550px;
+    }
+
+
+    .content {
+        padding:
+            28px
+            20px
+            20px;
+    }
+
+
+    .scroll-text {
+        display: none;
+    }
+
+
+    .ref-card {
+        flex-basis: 160px;
+    }
+
+}
+
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 450px) {
+
+    .window {
+        width: 96vw;
+
+        height: 92vh;
+    }
+
+
+    .content {
+        padding:
+            24px
+            15px
+            18px;
+    }
+
+
+    h1 {
+        font-size: 42px;
+    }
+
+
+    .ref-card {
+        flex-basis: 155px;
+
+        height: 265px;
+    }
+
+}
+
+/* =========================================
+   MOBILE LAYOUT
+   <= 700px
+========================================= */
+
+@media (max-width: 700px) {
+
+    /* ================================
+       BODY
+    ================================= */
+
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+
+    /* ================================
+       BACKGROUND
+    ================================= */
+
+    .background {
+        width: 100%;
+        min-height: 100vh;
+
+        padding: 0;
+
+        display: block;
+
+        background: #ffffff;
+    }
+
+
+    /* ================================
+       WINDOW
+    ================================= */
+
+    .window {
+        width: 100%;
+        max-width: none;
+
+        height: 100vh;
+        min-height: 100vh;
+
+        border-radius: 0;
+
+        background: #ffffff;
+
+        box-shadow: none;
+
+        backdrop-filter: none;
+    }
+
+
+    /* ================================
+       TOP BAR
+    ================================= */
+
+    .top-bar {
+        height: 50px;
+
+        padding: 0 18px;
+
+        border-bottom:
+            1px solid #D9E1F1;
+    }
+
+
+    .window-buttons {
+        gap: 5px;
+    }
+
+
+    .window-buttons span {
+        width: 7px;
+        height: 7px;
+    }
+
+
+    .window-title {
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .date {
+        display: none;
+    }
+
+
+    /* ================================
+       CONTENT
+    ================================= */
+
+    .content {
+        height: calc(100vh - 50px);
+
+        padding:
+            32px
+            20px
+            20px;
+    }
+
+
+    /* ================================
+       HEADING
+    ================================= */
+
+    .heading {
+        display: block;
+
+        margin-bottom: 30px;
+    }
+
+
+    .label {
+        font-size: 8px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 12px;
+    }
+
+
+    h1 {
+        font-size: 48px;
+
+        line-height: 0.88;
+
+        letter-spacing: -2.5px;
+    }
+
+
+    /* ================================
+       SCROLL TEXT
+    ================================= */
+
+    .scroll-text {
+        display: flex;
+
+        justify-content: flex-end;
+
+        margin-top: 18px;
+
+        padding-bottom: 0;
+    }
+
+
+    .scroll-text span {
+        font-size: 20px;
+    }
+
+
+    /* ================================
+       REF CONTAINER
+    ================================= */
+
+    .ref-container {
+        flex: 1;
+
+        overflow: hidden;
+    }
+
+
+    /* ================================
+       REF LIST
+    ================================= */
+
+    .ref-list {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 14px;
+
+        height: 100%;
+
+        overflow-x: hidden;
+
+        overflow-y: auto;
+
+        padding:
+            4px
+            3px
+            15px;
+
+        cursor: default;
+
+        scrollbar-width: none;
+    }
+
+
+    .ref-list::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .ref-list.dragging {
+        cursor: default;
+    }
+
+
+    /* ================================
+       REF CARD
+    ================================= */
+
+    .ref-card {
+
+        width: 100%;
+
+        min-width: 0;
+
+        height: auto;
+
+        min-height: 230px;
+
+        padding:
+            12px
+            11px
+            10px;
+
+        border-radius: 6px;
+
+        box-shadow:
+            0 8px 20px
+            rgba(25, 35, 56, 0.10);
+    }
+
+
+    .ref-card:hover {
+
+        transform: none;
+
+        box-shadow:
+            0 8px 20px
+            rgba(25, 35, 56, 0.10);
+    }
+
+
+    /* ================================
+       NUMBER
+    ================================= */
+
+    .number {
+
+        font-size: 27px;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    /* ================================
+       LINE
+    ================================= */
+
+    .line {
+
+        width: 12px;
+
+        height: 2px;
+
+        margin-top: 4px;
+
+        margin-bottom: 16px;
+    }
+
+
+    /* ================================
+       NAME
+    ================================= */
+
+    .ref-name {
+
+        font-size: 10px;
+
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        margin-bottom: 3px;
+    }
+
+
+    /* ================================
+       TYPE
+    ================================= */
+
+    .ref-type {
+
+        font-size: 7px;
+
+        margin-bottom: 8px;
+    }
+
+
+    /* ================================
+       IMAGE
+    ================================= */
+
+    .image-box {
+
+        width: 100%;
+
+        height: auto;
+
+        aspect-ratio: 1 / 0.82;
+
+        border-radius: 4px;
+
+        font-size: 8px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    /* ================================
+       ICONS
+    ================================= */
+
+    .icons {
+
+        left: 11px;
+
+        right: 11px;
+
+        bottom: 8px;
+
+        gap: 9px;
+
+        font-size: 7px;
+    }
+
+
+    /* ================================
+       BOTTOM
+    ================================= */
+
+    .bottom {
+
+        padding-top: 8px;
+
+        gap: 10px;
+    }
+
+
+    .progress {
+
+        height: 1px;
+    }
+
+
+    #progressBar {
+
+        height: 2px;
+    }
+
+
+    #nextButton {
+
+        font-size: 21px;
+
+        padding: 0;
+
+        display: none;
+    }
+
+}
+
+
+/* =========================================
+   SMALL PHONE
+   <= 430px
+========================================= */
+
+@media (max-width: 430px) {
+
+    .content {
+
+        padding:
+            28px
+            16px
+            16px;
+    }
+
+
+    h1 {
+
+        font-size: 44px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .heading {
+
+        margin-bottom: 24px;
+    }
+
+
+    .ref-list {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+
+    .ref-card {
+
+        min-height: 215px;
+
+        padding:
+            11px
+            10px
+            9px;
+    }
+
+
+    .number {
+
+        font-size: 25px;
+    }
+
+
+    .line {
+
+        margin-bottom: 13px;
+    }
+
+
+    .ref-name {
+
+        font-size: 9px;
+    }
+
+
+    .ref-type {
+
+        font-size: 6.5px;
+    }
+
+
+    .image-box {
+
+        aspect-ratio: 1 / 0.78;
+    }
+
+
+    .icons {
+
+        left: 10px;
+
+        right: 10px;
+
+        gap: 8px;
+
+        font-size: 6.5px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONE
+   <= 360px
+========================================= */
+
+@media (max-width: 360px) {
+
+    .content {
+
+        padding:
+            24px
+            13px
+            13px;
+    }
+
+
+    h1 {
+
+        font-size: 40px;
+    }
+
+
+    .ref-list {
+
+        gap: 10px;
+    }
+
+
+    .ref-card {
+
+        min-height: 200px;
+
+        padding: 9px;
+    }
+
+
+    .number {
+
+        font-size: 23px;
+    }
+
+
+    .ref-name {
+
+        font-size: 8px;
+    }
+
+
+    .ref-type {
+
+        font-size: 6px;
+    }
+
+
+    .icons {
+
+        left: 9px;
+
+        right: 9px;
+
+        bottom: 7px;
+
+        gap: 6px;
+    }
+
+}
+
+.ref-card,
+.ref-card * {
+    text-decoration: none;
+}
